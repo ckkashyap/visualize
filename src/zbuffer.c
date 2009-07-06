@@ -245,6 +245,7 @@ static void ZB_copyFrameBufferRGB24(ZBuffer * zb,
     unsigned short *q;
     unsigned int *p, *p1, w0, w1, w2, v0, v1;
     int y, n;
+    unsigned int qq;
 
     q = zb->pbuf;
     p1 = (unsigned int *) buf;
@@ -265,7 +266,10 @@ static void ZB_copyFrameBufferRGB24(ZBuffer * zb,
 	    p += 3;
 	} while (--n > 0);
 
-	(char *) p1 += linesize;
+	//(char *) p1 += linesize;
+	qq=(unsigned int)p1;
+	qq+=linesize;
+	p1=(unsigned int*)qq;
     }
 }
 
