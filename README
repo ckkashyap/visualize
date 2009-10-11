@@ -12,7 +12,7 @@ The main strength of TinyGL is that it is fast and simple because it
 has not to be exactly compatible with OpenGL. In particular, the
 texture mapping and the geometrical transformations are very fast.
 
-The main features of TinyGL are:
+The main features of TinyGL are::
 
 - Header compatible with OpenGL (the headers are adapted from the very good
 Mesa by Brian Paul et al.)
@@ -148,3 +148,4 @@ have been lost on my hard disk !
 * OpenGL(R) is a registered trademark of Silicon Graphics, Inc.
 ------------------------------------------------------------------------------
 Fabrice Bellard.
+
