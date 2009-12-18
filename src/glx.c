@@ -196,7 +196,7 @@ static int create_ximage(TinyGLXContext *ctx,
     ctx->ximage=XCreateImage(ctx->display, None, depth, ZPixmap, 0, 
                              NULL,xsize,ysize, 8, 0);
     framebuffer=gl_malloc(ysize * ctx->ximage->bytes_per_line);
-    ctx->ximage->data = framebuffer;
+    ctx->ximage->data = (char *)framebuffer;
     return 0;
 }
 
@@ -301,7 +301,7 @@ Bool glXMakeCurrent( Display *dpy, GLXDrawable drawable,
 
       /* Open the Z Buffer - 256 colors */
       zb=ZB_open(xsize,ysize,ZB_MODE_INDEX,ZB_NB_COLORS,
-                 color_indexes,palette,NULL);
+                 color_indexes,(int *)palette,NULL);
       if (zb == NULL) {
         fprintf(stderr, "Error while initializing Z buffer\n");
         exit(1);
